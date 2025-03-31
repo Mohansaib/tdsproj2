@@ -213,13 +213,13 @@ def GA1_13(question):
         print("No email found")
     github_replace_text(
         token=token,
-        repo="Telvinvarghese/Test",
+        repo="Mohansaib/Test",
         file_path="email.json",
         pattern=r'"\s*email\s*"\s*:\s*"[^"]+"',
         replacement=f'"email": "{email}"'
     )
     print("Email updated in email.json")
-    return "https://raw.githubusercontent.com/Telvinvarghese/Test/main/email.json"
+    return "https://raw.githubusercontent.com/Mohansaib/Test/main/email.json"
 
 def GA2_3(question):
     pattern = r"\b([\w.+-]+)@ds\.study\.iitm\.ac\.in\b"
@@ -232,16 +232,16 @@ def GA2_3(question):
     pattern = r"\b([\w.+-]+)@ds\.study\.iitm\.ac\.in\b"
     github_replace_text(
         token=token,
-        repo="Telvinvarghese/website",
+        repo="Mohansaib/website",
         file_path="index.html",
         pattern=pattern,
         replacement=email
     )
     print("Email updated in index.html")
-    trigger_github_workflow(token=token, repo="Telvinvarghese/website",
+    trigger_github_workflow(token=token, repo="Mohansaib/website",
                             workflow_file="daily_commit.yml")  # Trigger the workflow after
     time.sleep(15)
-    return "https://telvinvarghese.github.io/website/?v=2"
+    return "https://Mohansaib.github.io/website/?v=2"
 
 async def GA2_6_file(file: UploadFile = File(...)):
     """
@@ -286,16 +286,16 @@ def GA2_7(question):
     pattern = r"\b([\w.+-]+)@ds\.study\.iitm\.ac\.in\b"
     github_replace_text(
         token=token,
-        repo="Telvinvarghese/Test",
+        repo="Mohansaib/Test",
         file_path=".github/workflows/Daily_Commit.yml",
         pattern=pattern,
         replacement=email
     )
     print("Email updated in Daily_Commit.yml")
     trigger_github_workflow(
-        token=token, repo="Telvinvarghese/Test", workflow_file="Daily_Commit.yml")
+        token=token, repo="Mohansaib/Test", workflow_file="Daily_Commit.yml")
     time.sleep(15)
-    return "https://github.com/Telvinvarghese/Test"
+    return "https://github.com/Mohansaib/Test"
 
 def GA4_8(question):
     return GA2_7(question)
